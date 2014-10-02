@@ -16,6 +16,10 @@
             </div>
         {% endif %}
 
+        <div>
+            <a href="{% url 'add' %}">Add ticket</a>
+        </div>
+
         {% block content_block %}
         {% endblock %}
     </body>

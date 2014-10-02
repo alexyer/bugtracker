@@ -8,6 +8,7 @@ __email__ = 'mannavard1611@gmail.com'
 from django.conf.urls import patterns, include, url
 from django.core.urlresolvers import reverse_lazy
 
+from .views import BugCreateView
 from .views import BugListView
 from .views import BugDetailView
 from .views import RegisterView
@@ -21,4 +22,5 @@ urlpatterns = patterns('',
             {"template_name" : "login.html"}, name="login"),
         url(r'^logout/$', 'django.contrib.auth.views.logout',
             {"next_page" : reverse_lazy('login')}, name="logout"),
+        url(r'^add/$', BugCreateView.as_view(), name='add')
 )
